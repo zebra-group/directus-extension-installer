@@ -26,7 +26,7 @@
     "git",
     "installer"
   ],
-  "author": "Jonas König <jonas.koenig@mindbox.de>",
+  "author": "Jonas König <jonas.koenig@zebra.de>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.2",
@@ -41,7 +41,6 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
-    "@mbx/fancy-console": "^1.0.0",
     "axios": "0.27.2",
     "semver": "^7.5.3",
     "yaml": "^2.3.1",

@@ -6,7 +6,6 @@ import path from "node:path";
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers"
 import { selfUpdate } from "./update";
-import "@mbx/fancy-console";
 import {
     readDependenciesFromFile,
     parseStringToDependencies,
