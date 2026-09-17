@@ -26,7 +26,7 @@
     "git",
     "installer"
   ],
-  "author": "Jonas König <jonas.koenig@mindbox.de>",
+  "author": "Jonas König <jonas.koenig@zebra.de>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.2",
