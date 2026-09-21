@@ -21,7 +21,7 @@ describe('selfUpdate', () => {
         expect(tag).toBe('1.3.6')
         expect(mockedAxios).toBeCalledWith({
             method: 'GET',
-            url: 'https://api.github.com/repos/mindbox/directus-extension-installer/releases/latest', // <--- OWNER/REPO ggf. anpassen
+            url: 'https://api.github.com/repos/zebra-group/directus-extension-installer/releases/latest',
             headers
         })
     })

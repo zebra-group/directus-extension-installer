@@ -43,8 +43,7 @@ export async function selfUpdate() {
     process.exit()
 }
 
-// owner und repo anpassen!
-const GITHUB_OWNER = 'mindbox';
+const GITHUB_OWNER = 'zebra-group';
 const GITHUB_REPO = 'directus-extension-installer';
 
 export async function _getLatestRealeaseTag() {

@@ -2,10 +2,10 @@
 This little script was written to simlify our process with installing multiple directus extnsions in one instance while deploying a directus contaier to our kubernetes cluster.
 
 It provides several diffrent methods to install the extensions from.  
-You can provide your extension list as `*.json`, `string` or use the helm values file for the [Directus Helm Chart](https://git.mindbox.rocks/mindbox-intern/k8s/directus-helm-chart).
+You can provide your extension list as `*.json`, `string` or use the helm values file of the Directus Helm Chart.
 
 ## Installation
-1. Download your needed version from our [latest release](https://git.mindbox.rocks/mindbox-intern/directus-extension-installer/-/releases/permalink/latest)
+1. Download your needed version from our [latest release](https://github.com/zebra-group/directus-extension-installer/releases/latest)
 2. Place the dowloaded executable in a folder that is inside your `$PATH`. e.g. on unix in `/bin` oder `/usr/bin`.
 
 **Prerequisites**  
@@ -66,7 +66,7 @@ directus-extension-installer <extensions-folder-path> -s '[{"name": "EXTENSION_N
 directus-extension-installer <extensions-folder-path> --string '[{"name": "EXTENSION_NAME","git": "HTTPS_GIT_URL","type": "EXTENSION_TYPE", "npm_install": "true | false"}]'
 ```
 ### with `values.yaml` (helm)
-**more information about format:** [Directus Helm Chart](https://git.mindbox.rocks/mindbox-intern/k8s/directus-helm-chart/-/blob/main/values.yaml)
+**more information about format:** the extension list is read from `directus.extra_extensions.extensions` in your Directus Helm Chart `values.yaml`
 ```console
 directus-extension-installer <extensions-folder-path> -y values.yaml
 ```
