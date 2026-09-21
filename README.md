@@ -15,7 +15,7 @@ You can provide your extension list as `*.json`, `string` or use the helm values
 ### MacOs
 1. place downloaded executable in a folder within your `$PATH`
 ```console
-mv ~/Downloads/dei-mac /usr/local/bin/dei
+mv ~/Downloads/directus-extension-installer-macos /usr/local/bin/dei
 ```
 2. make it executable
 ```console
