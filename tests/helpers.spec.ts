@@ -10,18 +10,18 @@ import {
 describe('Parser', () => {
     const expectedObject = [{
         name: "extension-1",
-        git: "https://git.mindbox.rocks/directus-extensions/extension-1",
+        git: "https://github.com/zebra-group/extension-1",
         type: "endpoint",
         npm_install: true
     },
     {
         name: "extension-2",
-        git: "https://git.mindbox.rocks/directus-extensions/extension-2",
+        git: "https://github.com/zebra-group/extension-2",
         type: "hook"
     },
     {
         name: "extension-3",
-        git: "https://git.mindbox.rocks/directus-extensions/extension-3",
+        git: "https://github.com/zebra-group/extension-3",
         type: "module"
     }]
 
@@ -29,7 +29,7 @@ describe('Parser', () => {
         expect(readDependenciesFromFile(path.resolve('./tests/assets/test.json'))).toEqual(expectedObject)
     })
     it('parseStringToDependencies should return dependency object from stringyfied json', () => {
-        const jsonString = '[{"name": "extension-1","git": "https://git.mindbox.rocks/directus-extensions/extension-1","type": "endpoint","npm_install": true},{"name": "extension-2","git": "https://git.mindbox.rocks/directus-extensions/extension-2","type": "hook"},{"name": "extension-3","git": "https://git.mindbox.rocks/directus-extensions/extension-3","type": "module"}]'
+        const jsonString = '[{"name": "extension-1","git": "https://github.com/zebra-group/extension-1","type": "endpoint","npm_install": true},{"name": "extension-2","git": "https://github.com/zebra-group/extension-2","type": "hook"},{"name": "extension-3","git": "https://github.com/zebra-group/extension-3","type": "module"}]'
         expect(parseStringToDependencies(jsonString)).toEqual(expectedObject)
     })
     it('parseYamlToDependencies should return dependency object from yaml file with the right format', () => {

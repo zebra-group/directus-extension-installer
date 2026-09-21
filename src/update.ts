@@ -43,9 +43,16 @@ export async function selfUpdate() {
     process.exit()
 }
 
-// owner und repo anpassen!
-const GITHUB_OWNER = 'mindbox';
+const GITHUB_OWNER = 'zebra-group';
 const GITHUB_REPO = 'directus-extension-installer';
+
+// Namen der Release-Assets, so wie pkg sie aus dem Paketnamen baut und der
+// Release-Workflow (.github/workflows/ci.yml) sie hochlaedt. Weichen sie
+// voneinander ab, findet der Self-Update sein eigenes Release nicht.
+export const RELEASE_ASSETS = {
+    darwin: 'directus-extension-installer-macos',
+    win32: 'directus-extension-installer-win.exe'
+} as const;
 
 export async function _getLatestRealeaseTag() {
     // GitHub: https://api.github.com/repos/{owner}/{repo}/releases/latest
@@ -68,17 +75,8 @@ export async function _getLatestReleaseFile() {
     const latestReleaseData = (await axios(latestReleaseRequestOptions)).data
 
     // Asset je nach Plattform auswählen
-    let assetName = ''
-    switch (process.platform) {
-        case 'darwin':
-            assetName = 'dei-mac';
-            break;
-        case 'win32':
-            assetName = 'dei-win.exe';
-            break;
-        default:
-            throw new Error('Unsupported platform for self-update');
-    }
+    const assetName = RELEASE_ASSETS[process.platform as keyof typeof RELEASE_ASSETS]
+    if (!assetName) throw new Error('Unsupported platform for self-update');
 
     const asset = latestReleaseData.assets.find((a: any) => a.name === assetName);
     if (!asset) throw new Error(`No asset found for platform: ${assetName}`);
